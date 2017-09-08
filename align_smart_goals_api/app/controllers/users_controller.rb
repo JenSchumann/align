@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
+  before_action :authenticate_token, except: [:login, :create]
 
   #LOGIN action for users
   def login
@@ -59,7 +60,7 @@ class UsersController < ApplicationController
 
     def payload(id, username)
     {
-      exp: (Time.now + 30.minutes).to_i,
+      exp: (1.day.from_now).to_i,
       iat: Time.now.to_i,
       iss: ENV['JWT_ISSUER'],
       user: {
