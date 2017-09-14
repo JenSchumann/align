@@ -1,11 +1,11 @@
-#Align (backend)
+#**Align (backend)**#
 
-##Designer: Jen Schumann
+Designer: Jen Schumann
 
-###Live Site:
+**Live Site:**
 #### tbd
 
-###Description:
+**Description:**
 - In the state of Colorado, gifted-talented learners are supported by state funding and mandates.  Mandates include the development of an advanced learning plan.  Technology could better support gifted-talented youth through the existence of a tool which enables the advanced learning plan to be more student-centered.  This project is inspired by that need.
 
 - needs pics of redacted ALPS which show lack of user friendliness.
