@@ -61,7 +61,9 @@ class UsersController < ApplicationController
 
     def payload(id, username)
     {
-      exp: (1.day.from_now).to_i,
+      # not using 1.day.from_now yet
+      # exp: (1.day.from_now).to_i,
+      exp: (Time.now + 30.minutes).to_i,
       iat: Time.now.to_i,
       iss: ENV['JWT_ISSUER'],
       user: {
@@ -74,6 +76,7 @@ class UsersController < ApplicationController
 
     #issues with this method:
     def set_user
+
       @user = User.find(params[:id])
     end
 

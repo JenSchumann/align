@@ -19,7 +19,9 @@ Bundler.require(*Rails.groups)
 module AlignSmartGoalsApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    # commenting the config time zone out for now
     config.time_zone = 'Eastern Time (US & Canada)'
+    config.load_defaults 5.1
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

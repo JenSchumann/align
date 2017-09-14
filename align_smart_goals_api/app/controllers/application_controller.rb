@@ -2,7 +2,8 @@ class ApplicationController < ActionController::API
 
   def authenticate_token
     puts "AUTHENTICATE JWT"
-    render json: { status: 401, message: 'Unauthorized' } unless decode_token(bearer_token)
+    render json: { status: 401, message: 'Unauthorized' }
+    unless decode_token(bearer_token)
   end
 
   def bearer_token
@@ -17,7 +18,8 @@ class ApplicationController < ActionController::API
 
   def decode_token(token_input)
     puts "DECODE TOKEN, token input: #{token_input}"
-    puts token = JWT.decode(token_input, ENV['JWT_SECRET'], true)
+    puts token = JWT.decode(token_input, ENV['JWT_SECRET'], true, { :algorithm => 'HS256' })
+    render json: { decoded: token }
     JWT.decode(token_input, ENV['JWT_SECRET'], true)
   rescue
     render json: { status: 401, message: 'Unauthorized' }
